@@ -26,7 +26,7 @@ public class ICICIOTPProvider extends OTPProvider {
     @Override
     public String extractOTP(SMS sms) {
         if (sms != null &&
-                sms.sender.toLowerCase().equals(mOTPSender) &&
+                sms.sender.toLowerCase().contains(mOTPSender) &&
                 sms.hasMessage() &&
                 sms.getMessage().toLowerCase().contains(mOTPMessageContains)) {
             Timber.d("Matched basic criteria");
