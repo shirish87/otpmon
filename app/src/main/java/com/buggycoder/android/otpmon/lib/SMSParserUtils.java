@@ -6,6 +6,8 @@ import android.telephony.SmsMessage;
 
 import com.buggycoder.android.otpmon.model.SMS;
 
+import timber.log.Timber;
+
 public class SMSParserUtils {
 
     public static SMS parseSMSIntent(Intent intent) throws SMSParsingException {
@@ -49,6 +51,7 @@ public class SMSParserUtils {
 
                     String sender = smsMessage.getDisplayOriginatingAddress();
                     if (sender != null) {
+                        Timber.d("Sender: %s", sender);
                         receivedSMS = new SMS(sender, receivedAt, parts);
                     }
                 }

@@ -26,6 +26,7 @@ import rx.subjects.BehaviorSubject;
 import rx.subjects.PublishSubject;
 import rx.subjects.Subject;
 import rx.subscriptions.CompositeSubscription;
+import timber.log.Timber;
 
 public class OTPMonService extends Service {
     private static final String TAG = OTPMonService.class.getSimpleName();
@@ -119,6 +120,7 @@ public class OTPMonService extends Service {
                         try {
                             return SMSParserUtils.parseSMSIntent(intent);
                         } catch (Exception e) {
+                            Timber.e(e, TAG);
                             throw OnErrorThrowable.from(e);
                         }
                     }
@@ -134,6 +136,7 @@ public class OTPMonService extends Service {
                             }
                         }
 
+                        Timber.d("Unrecognized OTP provider");
                         return false;
                     }
                 }).share();
