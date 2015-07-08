@@ -1,0 +1,5 @@
+<resources>
+    <string name="icici_sender">ICICIB</string>
+    <string name="icici_body_contains">OTP is</string>
+    <string name="icici_otp_regex"><![CDATA[[0-9]{4,8}(?!.*[0-9]{4,8})]]></string>
+</resources>

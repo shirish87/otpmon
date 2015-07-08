@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">OTP Monitor</string>
+    <string name="intro">This simple app monitors incoming SMSs for OTPs from ICICI Bank and displays a notification containing options for copying the latest OTP.</string>
+
+    <string name="notif_title">New OTP</string>
+    <string name="notif_action_copy">Copy OTP</string>
+
+    <string name="clip_title">OTP</string>
+    <string name="clip_toast_msg">Copied OTP.</string>
+</resources>
